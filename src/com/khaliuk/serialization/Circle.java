@@ -19,20 +19,4 @@ public class Circle implements Shape {
     public void print() {
         System.out.print("Square with radius: " + getRadius());
     }
-
-    @Override
-    public String encodeToXml() {
-        String xmlString = "<Circle>\n";
-        xmlString += "\t<radius>" + getRadius() + "</radius>\n";
-        xmlString += "</Circle>\n";
-        return xmlString;
-    }
-
-    @Override
-    public String encodeToJson() {
-        String jsonString = "\t\"Circle\" : {\n";
-        jsonString += "\t\t\"radius\" : \"" + getRadius() + "\"\n";
-        jsonString += "\t}";
-        return jsonString;
-    }
 }
