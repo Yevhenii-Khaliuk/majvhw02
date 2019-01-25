@@ -29,11 +29,11 @@ public class Group implements Shape {
     }
 
     @Override
-    public String encodeToXML() {
+    public String encodeToXml() {
         StringBuilder xmlString = new StringBuilder();
         xmlString.append("<Group>\n\t<shapes>\n");
         for (Shape shape : shapes) {
-            String[] shapeXml = shape.encodeToXML().split("\n");
+            String[] shapeXml = shape.encodeToXml().split("\n");
             processXmlLines(shapeXml, xmlString);
         }
         xmlString.append("\t</shapes>\n</Group>\n");
@@ -47,11 +47,11 @@ public class Group implements Shape {
     }
 
     @Override
-    public String encodeToJSON() {
+    public String encodeToJson() {
         StringBuilder jsonString = new StringBuilder();
         jsonString.append("\t\"Group\" : {\n");
         for (Shape shape : shapes) {
-            String[] shapeJson = shape.encodeToJSON().split("\n");
+            String[] shapeJson = shape.encodeToJson().split("\n");
             processJsonLines(shapeJson, jsonString);
             jsonString.setCharAt(jsonString.length() - 1, ',');
             jsonString.append("\n");

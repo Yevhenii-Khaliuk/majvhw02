@@ -28,7 +28,7 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public String encodeToXML() {
+    public String encodeToXml() {
         String xmlString = "<Triangle>\n";
 
         for (int i = 0; i < SIDES_NUMBER; i++) {
@@ -48,7 +48,7 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public String encodeToJSON() {
+    public String encodeToJson() {
         String jsonString = "\t\"Triangle\" : {\n";
         for (int i = 0; i < SIDES_NUMBER - 1; i++) {
             jsonString = sideToJsonEntity(jsonString, i);

@@ -21,7 +21,7 @@ public class Square implements Shape {
     }
 
     @Override
-    public String encodeToXML() {
+    public String encodeToXml() {
         String xmlString = "<Square>\n";
         xmlString += "\t<side>" + getSide() + "</side>\n";
         xmlString += "</Square>\n";
@@ -29,7 +29,7 @@ public class Square implements Shape {
     }
 
     @Override
-    public String encodeToJSON() {
+    public String encodeToJson() {
         String jsonString = "\t\"Square\" : {\n";
         jsonString += "\t\t\"side\" : \"" + getSide() + "\"\n";
         jsonString += "\t}";

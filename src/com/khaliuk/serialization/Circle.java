@@ -21,7 +21,7 @@ public class Circle implements Shape {
     }
 
     @Override
-    public String encodeToXML() {
+    public String encodeToXml() {
         String xmlString = "<Circle>\n";
         xmlString += "\t<radius>" + getRadius() + "</radius>\n";
         xmlString += "</Circle>\n";
@@ -29,7 +29,7 @@ public class Circle implements Shape {
     }
 
     @Override
-    public String encodeToJSON() {
+    public String encodeToJson() {
         String jsonString = "\t\"Circle\" : {\n";
         jsonString += "\t\t\"radius\" : \"" + getRadius() + "\"\n";
         jsonString += "\t}";
