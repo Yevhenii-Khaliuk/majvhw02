@@ -18,6 +18,10 @@ public class Group implements Shape {
         shapes.remove(shape);
     }
 
+    public List<Shape> getShapes() {
+        return shapes;
+    }
+
     @Override
     public void print() {
         System.out.println("Group with elements:");
@@ -25,45 +29,6 @@ public class Group implements Shape {
             System.out.print("\t");
             shape.print();
             System.out.println();
-        }
-    }
-
-    @Override
-    public String encodeToXML() {
-        StringBuilder xmlString = new StringBuilder();
-        xmlString.append("<Group>\n\t<shapes>\n");
-        for (Shape shape : shapes) {
-            String[] shapeXml = shape.encodeToXML().split("\n");
-            processXmlLines(shapeXml, xmlString);
-        }
-        xmlString.append("\t</shapes>\n</Group>\n");
-        return xmlString.toString();
-    }
-
-    private void processXmlLines(String[] lines, StringBuilder sb) {
-        for (String line : lines) {
-            sb.append("\t\t").append(line).append("\n");
-        }
-    }
-
-    @Override
-    public String encodeToJSON() {
-        StringBuilder jsonString = new StringBuilder();
-        jsonString.append("\t\"Group\" : {\n");
-        for (Shape shape : shapes) {
-            String[] shapeJson = shape.encodeToJSON().split("\n");
-            processJsonLines(shapeJson, jsonString);
-            jsonString.setCharAt(jsonString.length() - 1, ',');
-            jsonString.append("\n");
-        }
-        jsonString.deleteCharAt(jsonString.length() - 2); // Removing last comma
-        jsonString.append("\t}");
-        return jsonString.toString();
-    }
-
-    private void processJsonLines(String[] lines, StringBuilder sb) {
-        for (String line : lines) {
-            sb.append("\t").append(line).append("\n");
         }
     }
 }

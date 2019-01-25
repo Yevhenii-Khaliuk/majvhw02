@@ -1,12 +1,13 @@
 package com.khaliuk.immutable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ImmutableClassDemo {
     public static void main(String[] args) {
         int id = 5;
         String description = "Immutable class description";
-        ArrayList<String> words = new ArrayList<>();
+        List<String> words = new ArrayList<>();
         words.add("one");
         words.add("two");
         words.add("three");

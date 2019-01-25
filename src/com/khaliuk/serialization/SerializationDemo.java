@@ -34,10 +34,10 @@ public class SerializationDemo {
 
         System.out.println("XML string");
         System.out.println();
-        System.out.println(ShapeToXML.encode(mainGroup));
+        System.out.println(ShapeToXml.encode(mainGroup));
         System.out.println("-----------------------------------------------------------------------------");
         System.out.println("JSON string");
         System.out.println();
-        System.out.println(ShapeToJSON.encode(mainGroup));
+        System.out.println(ShapeToJson.encode(mainGroup));
     }
 }

@@ -26,42 +26,4 @@ public class Triangle implements Shape {
             System.out.print(side + " ");
         }
     }
-
-    @Override
-    public String encodeToXML() {
-        String xmlString = "<Triangle>\n";
-
-        for (int i = 0; i < SIDES_NUMBER; i++) {
-            xmlString = sideToXmlEntity(xmlString, i);
-        }
-
-        xmlString += "</Triangle>\n";
-
-        return xmlString;
-    }
-
-    private String sideToXmlEntity(String xmlString, int index) {
-        xmlString += "\t<side" + index + ">";
-        xmlString += sides[index];
-        xmlString += "</side" + index + ">\n";
-        return xmlString;
-    }
-
-    @Override
-    public String encodeToJSON() {
-        String jsonString = "\t\"Triangle\" : {\n";
-        for (int i = 0; i < SIDES_NUMBER - 1; i++) {
-            jsonString = sideToJsonEntity(jsonString, i);
-            jsonString += ",\n";
-        }
-        jsonString = sideToJsonEntity(jsonString, SIDES_NUMBER - 1);
-        jsonString += "\n\t}";
-        return jsonString;
-    }
-
-    private String sideToJsonEntity(String jsonString, int index) {
-        jsonString += "\t\t\"side\"" + index + " : ";
-        jsonString += "\"" + sides[index] + "\"";
-        return jsonString;
-    }
 }

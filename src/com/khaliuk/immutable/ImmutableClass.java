@@ -1,16 +1,17 @@
 package com.khaliuk.immutable;
 
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class ImmutableClass {
+public final class ImmutableClass {
     private final int id;
     private final String description;
-    private final ArrayList<String> words;
+    private final List<String> words;
 
-    public ImmutableClass(int id, String description, ArrayList<String> words) {
+    public ImmutableClass(int id, String description, List<String> words) {
         this.id = id;
         this.description = description;
-        this.words = new ArrayList<>(words);
+        this.words = words;
     }
 
     public int getId() {
@@ -21,7 +22,7 @@ public class ImmutableClass {
         return description;
     }
 
-    public ArrayList<String> getWords() {
-        return new ArrayList<>(words);
+    public List<String> getWords() {
+        return Collections.unmodifiableList(words);
     }
 }
