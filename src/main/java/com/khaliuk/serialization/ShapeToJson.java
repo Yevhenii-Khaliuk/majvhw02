@@ -20,11 +20,11 @@ public class ShapeToJson {
         } else if (shape instanceof Group) {
             jsonString += encodeGroup((Group) shape);
         }
-        return jsonString;
+        return jsonString + "\n";
     }
 
     private static String encodeTriangle(Triangle triangle) {
-        String jsonString = "\t{ \"Triangle\" : {\n";
+        String jsonString = "\t{\n";
         double[] triangleSides = triangle.getSides();
         for (int index = 0; index < 2; index++) {
             jsonString += "\t\t\"side" + index + "\" : ";
@@ -33,27 +33,27 @@ public class ShapeToJson {
         }
         jsonString += "\t\t\"side2\" : ";
         jsonString += "\"" + triangleSides[2] + "\"";
-        jsonString += "\n\t}}";
+        jsonString += "\n\t}";
         return jsonString;
     }
 
     private static String encodeSquare(Square square) {
-        String jsonString = "\t{ \"Square\" : {\n";
+        String jsonString = "\t{\n";
         jsonString += "\t\t\"side\" : \"" + square.getSide() + "\"\n";
-        jsonString += "\t}}";
+        jsonString += "\t}";
         return jsonString;
     }
 
     private static String encodeCircle(Circle circle) {
-        String jsonString = "\t{ \"Circle\" : {\n";
+        String jsonString = "\t{\n";
         jsonString += "\t\t\"radius\" : \"" + circle.getRadius() + "\"\n";
-        jsonString += "\t}}";
+        jsonString += "\t}";
         return jsonString;
     }
 
     private static String encodeGroup(Group group) {
         StringBuilder jsonString = new StringBuilder();
-        jsonString.append("{ \"Group\" : {\n\t\"shapes\" : [\n");
+        jsonString.append("{ \"shapes\" : [\n");
         List<Shape> shapes = group.getShapes();
         for (Shape shape : shapes) {
             String[] lines = encodeShape(shape).split("\n");
@@ -64,7 +64,7 @@ public class ShapeToJson {
             jsonString.append("\n");
         }
         jsonString.deleteCharAt(jsonString.length() - 2); // Removing last comma
-        jsonString.append("\t]\n}}");
+        jsonString.append("\t]}");
         return jsonString.toString();
     }
 }

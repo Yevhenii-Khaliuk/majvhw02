@@ -53,68 +53,59 @@ public class ShapeToJsonTest {
 
     @Test
     public void testEncodeReturnsProperFormattedJsonString() {
-        String expectedResult = "{ \"Group\" : {\n" +
-                "\t\"shapes\" : [\n" +
-                "\t\t{ \"Triangle\" : {\n" +
+        String expectedResult = "{ \"shapes\" : [\n" +
+                "\t\t{\n" +
                 "\t\t\t\"side0\" : \"1.5\",\n" +
                 "\t\t\t\"side1\" : \"2.0\",\n" +
                 "\t\t\t\"side2\" : \"2.5\"\n" +
-                "\t\t}},\n" +
-                "\t\t{ \"Square\" : {\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
                 "\t\t\t\"side\" : \"0.3\"\n" +
-                "\t\t}},\n" +
-                "\t\t{ \"Circle\" : {\n" +
+                "\t\t},\n" +
+                "\t\t{\n" +
                 "\t\t\t\"radius\" : \"2.25\"\n" +
-                "\t\t}},\n" +
-                "\t{ \"Group\" : {\n" +
-                "\t\t\"shapes\" : [\n" +
-                "\t\t\t{ \"Triangle\" : {\n" +
+                "\t\t},\n" +
+                "\t{ \"shapes\" : [\n" +
+                "\t\t\t{\n" +
                 "\t\t\t\t\"side0\" : \"9.0\",\n" +
                 "\t\t\t\t\"side1\" : \"5.0\",\n" +
                 "\t\t\t\t\"side2\" : \"12.0\"\n" +
-                "\t\t\t}},\n" +
-                "\t\t\t{ \"Square\" : {\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
                 "\t\t\t\t\"side\" : \"5.3\"\n" +
-                "\t\t\t}},\n" +
-                "\t\t\t{ \"Circle\" : {\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
                 "\t\t\t\t\"radius\" : \"7.5\"\n" +
-                "\t\t\t}}\n" +
-                "\t\t]\n" +
-                "\t}},\n" +
-                "\t{ \"Group\" : {\n" +
-                "\t\t\"shapes\" : [\n" +
-                "\t\t\t{ \"Triangle\" : {\n" +
+                "\t\t\t}\n" +
+                "\t\t]},\n" +
+                "\t{ \"shapes\" : [\n" +
+                "\t\t\t{\n" +
                 "\t\t\t\t\"side0\" : \"6.0\",\n" +
                 "\t\t\t\t\"side1\" : \"8.0\",\n" +
                 "\t\t\t\t\"side2\" : \"10.0\"\n" +
-                "\t\t\t}},\n" +
-                "\t\t\t{ \"Square\" : {\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
                 "\t\t\t\t\"side\" : \"3.7\"\n" +
-                "\t\t\t}},\n" +
-                "\t\t\t{ \"Circle\" : {\n" +
+                "\t\t\t},\n" +
+                "\t\t\t{\n" +
                 "\t\t\t\t\"radius\" : \"2.8\"\n" +
-                "\t\t\t}},\n" +
-                "\t\t{ \"Group\" : {\n" +
-                "\t\t\t\"shapes\" : [\n" +
-                "\t\t\t\t{ \"Triangle\" : {\n" +
+                "\t\t\t},\n" +
+                "\t\t{ \"shapes\" : [\n" +
+                "\t\t\t\t{\n" +
                 "\t\t\t\t\t\"side0\" : \"3.0\",\n" +
                 "\t\t\t\t\t\"side1\" : \"4.0\",\n" +
                 "\t\t\t\t\t\"side2\" : \"5.0\"\n" +
-                "\t\t\t\t}},\n" +
-                "\t\t\t\t{ \"Square\" : {\n" +
+                "\t\t\t\t},\n" +
+                "\t\t\t\t{\n" +
                 "\t\t\t\t\t\"side\" : \"3.3\"\n" +
-                "\t\t\t\t}},\n" +
-                "\t\t\t\t{ \"Circle\" : {\n" +
+                "\t\t\t\t},\n" +
+                "\t\t\t\t{\n" +
                 "\t\t\t\t\t\"radius\" : \"2.5\"\n" +
-                "\t\t\t\t}}\n" +
-                "\t\t\t]\n" +
-                "\t\t}}\n" +
-                "\t\t]\n" +
-                "\t}}\n" +
-                "\t]\n" +
-                "}}";
+                "\t\t\t\t}\n" +
+                "\t\t\t]}\n" +
+                "\t\t]}\n" +
+                "\t]}\n";
         String actualResult = ShapeToJson.encode(mainGroup);
         assertEquals(expectedResult, actualResult);
     }
-
 }
