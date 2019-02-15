@@ -117,4 +117,5 @@ public class ShapeToXmlTest {
         String actualResult = ShapeToXml.encode(mainGroup);
         assertEquals(expectedResult, actualResult);
     }
+
 }
