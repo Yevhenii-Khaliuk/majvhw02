@@ -1,7 +1,7 @@
 package com.khaliuk.serialization;
 
 public class Triangle implements Shape {
-    private final int SIDES_NUMBER = 3;
+    private static final int SIDES_NUMBER = 3;
     private double[] sides;
 
     public Triangle(double[] sides) {
